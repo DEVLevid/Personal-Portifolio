@@ -4,6 +4,7 @@
   --header-height: 3rem;
   --first-color: #654E92;
   --second-color: hsl(224, 56%, 12%);
+  --third-color: #ffffff;
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
@@ -195,14 +196,12 @@ img {
 
 .home__social {
   display: flex;
-  flex-direction: column;
 }
 
 .home__social-icon {
-  width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
-  color: var(--second-color);
+  color: var(--third-color) ;
 }
 
 .home__social-icon:hover {
@@ -354,6 +353,7 @@ img {
 }
 
 .contact__button {
+  width: 100%;
   display: block;
   border: none;
   outline: none;
