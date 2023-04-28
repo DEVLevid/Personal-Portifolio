@@ -6,7 +6,7 @@
   --second-color: hsl(224, 56%, 12%);
   --third-color: #ffffff;
   --body-font: 'Poppins', sans-serif;
-  --big-font-size: 2rem;
+  --big-font-size: 3rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
@@ -188,23 +188,10 @@ img {
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
+
 }
 
 .home__title-color {
-  color: var(--first-color);
-}
-
-.home__social {
-  display: flex;
-}
-
-.home__social-icon {
-  margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
-  color: var(--third-color) ;
-}
-
-.home__social-icon:hover {
   color: var(--first-color);
 }
 
@@ -312,15 +299,15 @@ img {
 }
 
 .skills__css {
-  width: 85%;
+  width: 90%;
 }
 
 .skills__js {
-  width: 65%;
+  width: 75%;
 }
 
 .skills__ux {
-  width: 85%;
+  width: 70%;
 }
 
 .skills__img {
