@@ -47,4 +47,25 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
+
+function validateForm() {
+    let nome = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+
+    if (nome === '' || email === '') {
+        alert('all fields need to be filled in');
+        return false;
+    } else{
+        return true;
+    };
+};
+
+let submit_btn = document.getElementById('submit');
+submit_btn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (validateForm()) {
+        document.getElementById('meuFormulario').submit();
+    }
+});
