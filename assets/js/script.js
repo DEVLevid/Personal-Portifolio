@@ -52,20 +52,22 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 function validateForm() {
     let nome = document.getElementById('name').value;
     let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
 
     if (nome === '' || email === '') {
-        alert('all fields need to be filled in');
-        return false;
-    } else{
-        return true;
-    };
-};
+        alert('all fields need to be filled in!');
+    }
+
+     if(nome != '' && email != '' && message === '') {
+        alert('oops! you forgot your message :(')
+    }
+
+    if (nome != '' && email != '' && message != '') {
+        alert('thankyou for send me your message!');
+    }
+}
 
 let submit_btn = document.getElementById('submit');
-submit_btn.addEventListener('click', function(event) {
-    event.preventDefault();
-
-    if (validateForm()) {
-        document.getElementById('meuFormulario').submit();
-    }
+submit_btn.addEventListener('click', function() {
+    validateForm()
 });
