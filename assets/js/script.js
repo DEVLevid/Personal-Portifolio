@@ -41,7 +41,7 @@ const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: 2000,
-    delay: 200,
+    delay: 100,
 });
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
@@ -49,25 +49,51 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 
-function validateForm() {
-    let nome = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
+const confirmedMessageEl = document.getElementById('confirmed-message');
+const containerEl = document.getElementById('myForm');
+function formSuccess(){
+    confirmedMessageEl.classList.add('active');
+    containerEl.classList.add('active');
+}
 
-    if (nome === '' || email === '') {
+function validateForm() {
+    const nome = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+
+    if (nome === '') {
         alert('all fields need to be filled in!');
     }
 
-     if(nome != '' && email != '' && message === '') {
-        alert('oops! you forgot your message :(')
-    }
-
-    if (nome != '' && email != '' && message != '') {
-        alert('thankyou for send me your message!');
+    if (message === '') {
+        alert('oops you forgot your message!')
     }
 }
 
-let submit_btn = document.getElementById('submit');
-submit_btn.addEventListener('click', function() {
+function validateEmail(email){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+}
+
+const invalidEmailEl = document.getElementById('invalid-email');
+const emailInput = document.getElementById('email');
+const submit_btn = document.getElementById('submit');
+const dismiss = document.getElementById('dismiss-message');
+submit_btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if(validateEmail(email)){
+        invalidEmailEl.classList.remove('active')
+        emailInput.classList.remove('active')
+        formSuccess()
+    }else{
+        invalidEmailEl.classList.add('active')
+        emailInput.classList.add('active')
+    }
     validateForm()
 });
+
+dismiss.addEventListener('click', () => {
+    confirmedMessageEl.classList.remove('active');
+    containerEl.classList.remove('active');
+})

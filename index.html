@@ -155,14 +155,32 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
+
                     <form action="" class="contact__form" id="myForm">
-                        <label for=""> <input type="text" placeholder="Name" id="name" class="contact__input"></label>
-                        <label for=""><input type="email" placeholder="Email" id="email" class="contact__input"></label>
-                            <label for=""><textarea name="" id="message" cols="0" rows="10" class="contact__input" placeholder="Send me a message..."></textarea></label>
-                                <label for=""><input type="button" value="Send" id="submit" class="contact__button button"></label>
-                                <p id="alert"></p>
+                        <label for="">
+                            <input type="text" placeholder="Name" id="name" class="contact__input">
+                        </label>
+                        <label for="" id="invalid-email">
+                            <p>Valid email required!</p>
+                        </label>
+                        <label for="">
+                            <input type="email" placeholder="Email" id="email" class="contact__input">
+                        </label>
+                            <label for="">
+                                <textarea name="" id="message" cols="0" rows="10" class="contact__input" placeholder="Send me a message..."></textarea>
+                            </label>
+                                <label for="">
+                                    <input type="submit" value="Send" id="submit" class="contact__button button">
+                                </label>
                     </form>
+
                 </div>
+
+                <div id="confirmed-message" class="confirmed-message">
+                    <h2>Thanks for your message!</h2>
+                    <button id="dismiss-message" class="dismiss-button">Dismiss message</button>
+                </div>
+
             </section>
         </main>
 

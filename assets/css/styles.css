@@ -16,6 +16,7 @@
   --mb-6: 3rem;
   --z-back: -10;
   --z-fixed: 100;
+  --Tomato: hsl(4, 100%, 67%);
 }
 
 @media screen and (min-width: 968px) {
@@ -117,6 +118,48 @@ img {
   align-items: center;
   font-weight: var(--font-semi);
   background-color: #EAEAEA;
+}
+
+.form-item #email.active {
+  background-color: rgba(225, 98, 83, 0.25);
+  border: 1px solid var(--Tomato);
+}
+
+#invalid-email{
+  display: none;
+  color: var(--Tomato);
+}
+
+#invalid-email.active{
+  display: block;
+}
+
+.confirmed-message.active{
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding-bottom: 2rem;
+  gap: 2rem;
+}
+
+.confirmed-message{
+  display: none;
+  place-items: center;
+  line-height: 1.2;
+}
+
+#myForm.active{
+  display: none;
+}
+
+.dismiss-button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .5rem;
+  border: none;
 }
 
 @media screen and (max-width: 767px) {
