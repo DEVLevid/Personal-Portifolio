@@ -23,7 +23,6 @@ Recursos do Projeto:
 Tecnologias Utilizadas:
 - HTML5, CSS3 para criar uma base sólida.
 - JavaScript para adicionar interatividade e dinamismo.
-- Frameworks como React.js.
 - Git para rastrear e gerenciar versões do código.
 - Hospedagem em plataformas como GitHub Pages, para compartilhar meu trabalho com o mundo.
     
